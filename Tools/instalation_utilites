@@ -1,0 +1,63 @@
+UTILITIES
+
+CONDA:
+Managing packages:
+conda list : para ver la lista de paquetes inslatados en ella
+conda upgrade --all: actualizar todo CONDA
+conda install paquete_nombre: instalar el paquete que quieras
+conda install numpy scipy pandas: instalar varios paquetes a la vez
+conda install numpy=1.10: instalar una versione en concreto
+conda remove paquete_nombre: desinstalar paquetes
+
+Managing env:
+To create an environment, use conda create -n env_name list of packages in your
+terminal. Here -n env_name sets the name of your environment (-n for name) and
+list of packages is the list of packages you want installed in the environment.
+For example, to create an environment named my_env and install numpy in it,
+type conda create -n my_env numpy.
+When creating an environment, you can specify which version of Python to
+install in the environment.
+conda create -n py python=3.3 for Python 3.3.
+Once you have an environment created, use source activate my_env to enter
+it on OSX/Linux.
+The environment has only a few packages installed by default, plus the ones you
+installed when creating it. You can check this out with conda list. Installing
+packages in the environment is the same as before: conda install package_name.
+Only this time, the specific packages you install will only be available when
+you're in the environment. To leave the environment, type source deactivate.
+Removing environments: If there are environments you don't use anymore,
+-- conda env remove -n env_name -- will remove the specified environment
+(here, named env_name).
+
+JUPYTER NOTEBOOK
+Para instalarlo en un env: conda install jupyter notebook
+Edición de texto en cells: Headers
+You can write headers using the pound/hash/octothorpe symbol # placed before
+the text. One # renders as an h1 header, two #s is an h2, and so on.
+Looks like this: (contra mas asteriscos menor tamaño)
+
+# Header 1
+## Header 2
+### Header 3
+
+Para poner link, [Udacity's home page](https://www.udacity.com) el texto que
+resultará el link entre corchetes y el link entre parentesis.
+
+Podemos dar enfasis a las palabras con negrita con **palabras** o cursiva
+con *palabras*.
+
+Math expressions: You can create math expressions in Markdown cells using
+LaTeX symbols. Notebooks use MathJax to render the LaTeX symbols as math
+symbols. To start math mode, wrap the LaTeX in dollar signs $y = mx + b$ for
+inline math. For a math block, use double dollar signs:
+
+$$
+y = \frac{a}{b+c}
+$$
+
+Para añadirle resolucion a los gráficos: Tip: On higher resolution screens
+ such as Retina displays, the default images in notebooks can look blurry.
+ Use %config InlineBackend.figure_format = 'retina' after %matplotlib inline
+ to render higher resolution images.
+
+%pdb nos muesta información mas completa si nos sale un error.
